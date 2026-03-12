@@ -6,14 +6,12 @@ SERVER_DIR="/workspaces/hosted-payment-page/server/node"
 CLIENT_DIR="/workspaces/hosted-payment-page/client/react"
 
 ALTERNATE_WELCOME_MESSAGE="
-👋 Welcome to the \"PayPal Standard Checkout Integration Example\"
+👋 Welcome to the \"Hosted Payment Page Integration Example\"
 
 Please rename the \".env.example\" file to \".env\" and update \"MERCHANT_ALIAS\" and \"SECRET_KEY\"."
 
 WELCOME_MESSAGE="
-👋 Welcome to the \"PayPal Standard Checkout Integration Example\"
-
-🚀 The checkout page will automatically open in the browser after the server is started."
+👋 Welcome to the \"Hosted Payment Page Integration Example\""
 
 # Frontend setup functions
 setup_frontend() {
