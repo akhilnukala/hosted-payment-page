@@ -61,8 +61,8 @@ ENV_FILE="/workspaces/hosted-payment-page/server/node/.env"
 if [ -f "$ENV_FILE" ] && grep -q "^MERCHANT_ALIAS=" "$ENV_FILE" && grep -q "^SECRET_KEY=" "$ENV_FILE"; then
     sudo bash -c "echo \"${WELCOME_MESSAGE}\""
     
-    npm config set registry http://registry.npmjs.org/
-    echo "✓ NPM registry set to http://registry.npmjs.org/"
+    npm config set registry https://registry.npmjs.org/
+    echo "✓ NPM registry set to https://registry.npmjs.org/"
     
     npm config set strict-ssl false
     echo "✓ NPM strict-ssl set to false"
