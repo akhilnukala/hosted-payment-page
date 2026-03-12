@@ -63,19 +63,21 @@ ENV_FILE="/workspaces/hosted-payment-page/server/node/.env"
 if [ -f "$ENV_FILE" ] && grep -q "^MERCHANT_ALIAS=" "$ENV_FILE" && grep -q "^SECRET_KEY=" "$ENV_FILE"; then
     sudo bash -c "echo \"${WELCOME_MESSAGE}\""
     
-    # npm config set registry http://registry.npmjs.org/
-    # echo "✓ NPM registry set to http://registry.npmjs.org/"
+    npm config set registry http://registry.npmjs.org/
+    echo "✓ NPM registry set to http://registry.npmjs.org/"
     
-    # rm -rf node_modules
-    # echo "✓ Removed node_modules"
-    
-    # npm cache clean --force
-    # echo "✓ Cleaned npm cache"
-    # npm install --verbose
+    npm config set strict-ssl false
+    echo "✓ NPM strict-ssl set to false"
 
     # SETUP BACKEND
     cd "/workspaces/hosted-payment-page/server/node"
     echo "✓ Changed directory to server/node"
+
+    rm -rf node_modules
+    echo "✓ Removed node_modules"
+    
+    npm cache clean --force
+    echo "✓ Cleaned npm cache"
 
     npm install
     echo "✓ Installed dependencies"
@@ -85,11 +87,14 @@ if [ -f "$ENV_FILE" ] && grep -q "^MERCHANT_ALIAS=" "$ENV_FILE" && grep -q "^SEC
     echo "✓ Started backend server"
 
     # SETUP FRONTEND 
-    npm config set strict-ssl false
-    echo "✓ NPM strict-ssl set to false"
-    
     cd "/workspaces/hosted-payment-page/client/react"
     echo "✓ Changed directory to client/react"
+
+    rm -rf node_modules
+    echo "✓ Removed node_modules"
+    
+    npm cache clean --force
+    echo "✓ Cleaned npm cache"
     
     npm install
     echo "✓ Installed dependencies"
